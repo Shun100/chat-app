@@ -27,7 +27,7 @@ public class ConnectionEventListener {
   private final SimpMessageSendingOperations messageTemplate;
   
   @EventListener // WebSocketの接続を検知し、この@EventListenerが付与されたメソッドを自動的に呼び出す
-  public void hadleWebSocketDisconnectListener(SessionDisconnectEvent event) {
+  public void handleWebSocketDisconnectListener(SessionDisconnectEvent event) {
     // セッション属性に登録されているユーザ名を取得する
     StompHeaderAccessor headerAccessor = StompHeaderAccessor.wrap(event.getMessage());
     String username = (String)headerAccessor.getSessionAttributes().get("username");
